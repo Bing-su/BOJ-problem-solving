@@ -3,23 +3,20 @@ import streamlit as st
 
 root = Path(".")
 
-path_num_map = {p: p.name.removesuffix(".py") for p in root.glob("problem/**/*.py")}
-options = sorted(path_num_map.keys())
+path_to_name = {p: p.name.removesuffix(".py") for p in root.glob("problem/**/*.py")}
+options = sorted(path_to_name.keys())
 
 with st.sidebar:
     st.image("sundae.png")
-    selected = st.selectbox(
-        "Select Problem", options, format_func=lambda s: path_num_map[s]
+    selected: Path = st.selectbox(
+        "Select Problem", options, format_func=lambda s: path_to_name[s]
     )
     st.markdown("[Github](https://github.com/Bing-su)")
 
 with selected.open(encoding="utf-8") as file:
     code = file.read()
 
-first_line = code.splitlines()[0]
-if first_line.startswith("#"):
-    st.markdown(first_line)
-
-num = path_num_map[selected]
+num, name = path_to_name[selected].split(maxsplit=1)
+st.title(f"{num} {name}")
 st.markdown(f"[Link](https://www.acmicpc.net/problem/{num})")
 st.code(code)
