@@ -1,4 +1,3 @@
-# 23885 비숍 투어
 N, M = map(int, input().split())
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))

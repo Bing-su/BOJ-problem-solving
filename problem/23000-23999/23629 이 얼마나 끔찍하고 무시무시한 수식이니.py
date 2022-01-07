@@ -1,4 +1,3 @@
-# 23629 이 얼마나 끔찍하고 무시무시한 수식이니
 import re
 from operator import add, sub, mul
 

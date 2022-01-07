@@ -1,4 +1,3 @@
-# 23843 콘센트
 N, M = map(int, input().split())
 queue = [0] * M
 for n in sorted(map(int, input().split()), reverse=True):

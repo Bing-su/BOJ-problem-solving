@@ -1,4 +1,3 @@
-# 23888 등차수열과 쿼리
 import sys
 from math import gcd
 

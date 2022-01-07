@@ -1,4 +1,3 @@
-# 19638 센티와 마법의 뿅망치
 import heapq, sys
 
 
